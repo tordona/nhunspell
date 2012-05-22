@@ -1,0 +1,83 @@
+﻿/*************************** MSE-iT Ribbon Blue Markup ***************************************************/
+#MitarbeiterImg
+{
+	display: block;
+	float: left;
+	width: 300px;
+	height: 200px;
+	z-index:0;
+}
+
+.preis-reisebuero-software-kalkulieren-right
+{
+	display: block;
+	float: right;
+	width: 350px;
+	height: 146px;
+	padding-left:10px;
+}
+
+.kontakt-tastatur-right
+{
+	display: block;
+	float: right;
+	width: 320px;
+	height: 252px;
+}
+
+.reisebuero-backoffice-tipp-right
+{
+	display: block;
+	float: right;
+	width: 280px;
+	height: 225px;
+}
+
+.reisebuero-software-maxi-right
+{
+	display: block;
+	float: right;
+	width: 161px;
+	height: 250px;
+}
+
+.under-construction-right
+{
+	display: block;
+	float: right;
+	width: 128px;
+	height: 128px;
+	overflow: hidden;
+	clear: right;
+	
+}
+
+.Testversion-Nutzer-maxi-right
+{
+	display: block;
+	float: right;
+	width: 240px;
+	height: 361px;
+	overflow: hidden;
+	clear: right;
+}
+
+.Vorfuehrung-Termin-right
+{
+	display: block;
+	float: right;
+	width: 360px;
+	height: 216px;
+	overflow: hidden;
+	clear: right;
+}
+
+.reisebuero-backoffice-angebot-right
+{
+	display: block;
+	float: right;
+	width: 240px;
+	height: 329px;
+	overflow: hidden;
+	clear: right;	
+}

@@ -1,0 +1,64 @@
+﻿#Content
+{
+	color: #001945;
+	z-index:2;
+}
+
+
+.Article
+{
+	border: solid 1px #DDD;
+	background-color: #FFFEFF;
+	position:absolute;
+	top: 50px; 
+	left: 10px;
+	padding:1.0em 1.5em 1.5em 1.5em;
+	margin:0.2em 0.2em 0.2em 0.2em;
+	float:left;
+}
+
+.Article h1
+{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	font-size: 125%;
+	color: #003399;
+}
+
+
+.Article h2
+{
+	margin-top: 0.8em;
+	margin-bottom: 0.2em;
+	font-size: 105%;
+	color: #003399;
+}
+
+
+.Article p
+{
+	text-align:justify;
+	margin-bottom: 0.3em;
+}
+
+
+.Article pre
+{
+	font-size: 80%;
+
+}
+
+
+
+.Article .logo_sf
+{
+	display: block;
+	float: right;
+	width: 125px;
+	height: 37px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+

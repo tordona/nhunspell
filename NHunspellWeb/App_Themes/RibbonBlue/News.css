@@ -1,0 +1,65 @@
+﻿/*************************** MSE-iT Ribbon Blue Markup ***************************************************/
+
+#News
+{
+	display: block;
+	padding-right: 0.3em;
+	padding-left: 0.5em;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	
+	text-align:center;
+	color: #003399;
+	font-weight:normal;	
+}
+
+
+#News span
+{
+	
+	display:block;
+	
+	margin-top: 0.0em;
+	margin-bottom: 0.3em;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+
+	color: #003399;
+	font-weight:bold;
+		
+}
+
+
+#News blockquote
+{
+	display:block;
+	text-align:justify;	
+	margin: 0em 1.2em 1em 1.2em;
+	
+}
+
+#News blockquote h3
+{
+
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	
+	color: #003399;
+	font-weight:bold;	
+	font-size: 100%;
+	
+}
+
+#News blockquote .date
+{
+
+	margin-top: 0.6em;
+	margin-bottom: 0.0em;
+	
+	color: #003399;
+	font-weight:normal;	
+	text-align:right;
+	font-size: 80%;
+	
+}
+

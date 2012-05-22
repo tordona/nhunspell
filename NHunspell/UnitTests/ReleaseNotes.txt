@@ -1,0 +1,4 @@
+﻿
+
+Important Artickes and Documentation:
+http://msdn.microsoft.com/de-de/library/zah6xy75.aspx (Default Marshaling Behavior)

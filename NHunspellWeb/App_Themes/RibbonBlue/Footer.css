@@ -1,0 +1,20 @@
+﻿/*************************** MSE-iT Ribbon Blue Markup ***************************************************/
+#Footer
+{
+	min-height:2.2em;
+}
+
+#Footer .Validation
+{
+	float:right;
+	margin: 0.1em 2em 0.1em 2em;
+}
+
+#Footer p
+{
+	margin: 0.5em;	
+	text-align: center;
+	font-size:smaller;
+	color: #003399;		
+	
+}

@@ -1,0 +1,47 @@
+﻿
+/*************************** MSE-iT Ribbon Blue Markup ***************************************************/
+
+#Navigation .logo
+{
+	display:block;
+	float:left;
+	width: 189px;
+	height: 40px;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:3px;
+	padding-right:16px;
+}
+
+#Navigation .logo_sf
+{
+	display: block;
+	float: right;
+	width: 125px;
+	height: 37px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+
+#Navigation .logo_sf img
+{
+	width: 125px;
+	height: 37px;
+}
+
+
+#Navigation h1
+{
+	padding-top:10px;
+	padding-bottom:3px;
+	padding-left: 3px;
+	padding-right:3px;
+
+	color: #003399;
+	font-size: 20px;
+}
+
+

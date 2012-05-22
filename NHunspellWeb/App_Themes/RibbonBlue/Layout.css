@@ -1,0 +1,70 @@
+﻿/*************************** MSE-iT Ribbon Blue Markup ***************************************************/
+#LayoutContainer /* Einschließender Container Navigation - ContentLayout - Footer */
+{
+
+}
+
+#Navigation				/* Header */
+{
+	background-color: #F4F8FF;
+	display: block;
+	overflow: hidden;
+	margin-right: 0.3em;
+	margin-left: 0.3em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	min-width: 950px;
+}
+
+#ContentLayoutContainer /* Content + News Container */
+{
+	background-color: #F4F8FF;	
+	display:block;
+	overflow:hidden;
+	margin-right: 0.3em;
+	margin-left: 0.3em;
+	margin-top: 0.3em;
+	min-width: 950px;
+}
+
+
+#Content
+{
+	position: relative;
+	display: block;
+	float:left;
+	width:80%;
+	margin-left:1px;
+	margin-top:1px;
+	min-height:500px;
+}
+
+#News
+{
+    position:relative;
+    display:block;
+    overflow:hidden;
+}
+
+#Footer
+{
+	background-color: #F4F8FF;
+	clear:both;
+	display: block;
+	overflow: hidden;
+	height:2em;
+	margin-right: 0.3em;
+	margin-left: 0.3em;
+	margin-top: 5px;
+	margin-bottom: 0.3em;
+	min-width: 950px;
+
+}
+
+
+
+
+
+
+
+
