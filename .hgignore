@@ -16,3 +16,4 @@ syntax: glob
 *.sdf
 *.opensdf
 *.aps
+*.pdb
