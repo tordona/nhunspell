@@ -305,6 +305,7 @@
     <None Include="it_IT.aff" />
     <None Include="it_IT.dic" />
     <None Include="NHunspell.snk" />
+    <None Include="PostBuild.ps1" />
     <None Include="ru_RU.aff">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -357,10 +358,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>XCOPY $(ProjectDir)Hunspellx86.dll  $(TargetDir) /Y
-XCOPY $(ProjectDir)Hunspellx86.pdb  $(TargetDir) /Y
-XCOPY $(ProjectDir)Hunspellx64.dll  $(TargetDir) /Y
-XCOPY $(ProjectDir)Hunspellx64.pdb  $(TargetDir) /Y
-</PostBuildEvent>
+    <PostBuildEvent>powershell -file $(ProjectDir)\PostBuild.ps1 $(ConfigurationName) $(PlatformName) $(ProjectDir) $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>
