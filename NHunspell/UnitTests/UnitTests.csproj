@@ -245,9 +245,6 @@
     <None Include="HyphenTests\conv.word">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="HyphenTests\Makefile.in">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="HyphenTests\settings.hyph">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
