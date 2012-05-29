@@ -11,4 +11,3 @@ $TargetDir = $Args[3]
 
 Copy-Item $ProjectDir\Hunspellx86.dll  $TargetDir
 Copy-Item $ProjectDir\Hunspellx64.dll  $TargetDir
-
