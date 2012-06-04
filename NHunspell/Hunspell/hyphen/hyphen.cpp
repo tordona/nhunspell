@@ -40,6 +40,8 @@
 #include <stdio.h>  /* for fprintf */
 #include <string.h> /* for strdup */
 
+#include "../NHunspellExtensions.h"
+
 #ifdef UNX
 #include <unistd.h> /* for exit */
 #endif

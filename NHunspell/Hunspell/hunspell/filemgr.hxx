@@ -6,6 +6,7 @@
 
 #include "hunzip.hxx"
 #include <stdio.h>
+#include "../NHunspellExtensions.h"
 
 class LIBHUNSPELL_DLL_EXPORTED FileMgr
 {

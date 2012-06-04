@@ -1,0 +1,2 @@
+Hunspell: 1.3.2
+Hyphen: 2.8.3
