@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>Thomas Maierhofer</authors>
     <owners />
     <licenseUrl>http://nhunspell.sourceforge.net/</licenseUrl>
@@ -14,10 +14,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       NHunspell is a spell checking, hyphenation, word stemming and thesaurus library based on Hunspell.
-      Hunspell is the default spell checker of OpenOffice, Mozilla Thunderbird and Firefox, Google Chrome
-      and the Apple MAC OS/X operating system since version 10.6 "Snow Leopard".
-      Hunspell is based an MySpell and can use the MySpell dictionaries.
-      
       NHunspell can use OpenOffice dictionaries for spell checking, hyphenation and thesaurus.
       It is an alternative to GNU Aspell, ISpell, PSpell and Enchant.
       
@@ -26,25 +22,29 @@
       The NHunspell package doesn't install dictionaries. Dictionaries can be found at
       http://extensions.openoffice.org/en/dictionaries.
       OpenOffice dictionaries (.oxt) are Zip  files and contain the real dictionaries.
-      Important: Dictionaries have its own licence. Check the dictionary licence before you use them.
+      
+      Important: Dictionaries have an own licence. Check the dictionary licence before you use them.
       
       NHunspell is licensed under: GPL/LGPL/MPL. Free use in commercial applications is permitted according to the LGPL and MPL licenses.
       Your commercial application can link against the NHunspell DLLs.
     </description>
     <summary>NHunspell brings Hunspell spell checking, hyphenation and thesaurus to the Microsoft® .NET Framework.</summary>
-    <releaseNotes>Version 1.0.0.0 is the first RTM release of NHunspell
+    <releaseNotes>
+      Version 1.1.0.0 is the second RTM release of NHunspell
       Hunspell Version: 1.3.2
-      Hyphen Version: 2.8.3
+      Hyphen Version: 2.8.6
       MyThes Version: managed implementation
+      Hunspell / Hyphen Patches up to: 2013-03-14
       The package contains only the assemblies. You will need to install the documentaton and the dictionaries separately.
     </releaseNotes>
-    <copyright>Maierhofer Software, Germany and the Hunspell Authors</copyright>
+    <copyright>Thomas Maierhofer, Germany, and the Hunspell Authors</copyright>
     <language>en-US</language>
     <tags>NHunspell Hunspelll spellchecker hyphenation thesaurus dictionary</tags>
   </metadata>
   <files>
     <file src="UnitTests\bin\Release\NHunspell.dll" target="lib\net\NHunspell.dll" />
     <file src="UnitTests\bin\Release\NHunspell.xml" target="lib\net\NHunspell.xml" />
+    <file src="UnitTests\bin\Release\NHunspell.pdb" target="lib\net\NHunspell.pdb" />
     <file src="UnitTests\bin\Release\Hunspellx64.dll" target="native\Hunspellx64.dll" />
     <file src="UnitTests\bin\Release\Hunspellx86.dll" target="native\Hunspellx86.dll" />
     <file src="install.ps1" target="Tools\install.ps1" />

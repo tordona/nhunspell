@@ -5,14 +5,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		HunspellVersions.txt = HunspellVersions.txt
 		install.ps1 = install.ps1
-		NHunspell-Documentation.docx = NHunspell-Documentation.docx
 		NHunspell.nuspec = NHunspell.nuspec
 		NHunspellCopyNativeDllsCmd.ps1 = NHunspellCopyNativeDllsCmd.ps1
 		uninstall.ps1 = uninstall.ps1
+		Hunspell\UpdateToNewHunspellSourcecode.txt = Hunspell\UpdateToNewHunspellSourcecode.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D1CCA085-3742-43CE-8EDD-A4581CFB53FE}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\Layout.content = Documentation\Layout.content
 		Documentation\NHunspell-Documentation.shfbproj = Documentation\NHunspell-Documentation.shfbproj
 	EndProjectSection
 EndProject

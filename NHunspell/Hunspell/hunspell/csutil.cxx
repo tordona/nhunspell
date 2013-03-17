@@ -10,7 +10,6 @@
 #include "atypes.hxx"
 #include "langnum.hxx"
 
-
 #ifdef OPENOFFICEORG
 #  include <unicode/uchar.h>
 #else

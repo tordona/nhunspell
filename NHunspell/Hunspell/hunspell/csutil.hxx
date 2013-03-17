@@ -123,6 +123,7 @@ struct unicode_info {
   unsigned short clower;
 };
 
+
 LIBHUNSPELL_DLL_EXPORTED int initialize_utf_tbl();
 LIBHUNSPELL_DLL_EXPORTED void free_utf_tbl();
 LIBHUNSPELL_DLL_EXPORTED unsigned short unicodetoupper(unsigned short c, int langnum);

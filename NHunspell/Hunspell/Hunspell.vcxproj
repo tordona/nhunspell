@@ -209,7 +209,6 @@
   <ItemGroup>
     <None Include="hunspell\license.hunspell" />
     <None Include="hunspell\license.myspell" />
-    <None Include="NHunspellExtensionsIntegrationInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Hunspell.rc" />

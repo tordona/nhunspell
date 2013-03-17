@@ -163,16 +163,14 @@ static char *combine(
   return expr;
 }
 
+static char *pattab_key[MAXPATHS];
+static char *pattab_val[MAXPATHS];
+static char *newpattab_key[MAXPATHS];
+static char *newpattab_val[MAXPATHS];
 
-//
-//
 int main(int argc, const char* argv[]) {
   FILE *in, *out;
-  char *pattab_key[MAXPATHS];
-  char *pattab_val[MAXPATHS];
   int   patterns = 0;
-  char *newpattab_key[MAXPATHS];
-  char *newpattab_val[MAXPATHS];
   int   newpatterns = 0;
   char format[132]; // 64+65+newline+zero+spare
   int p;
@@ -191,8 +189,8 @@ int main(int argc, const char* argv[]) {
         format[l] = 0; // remove '%'
       }
       int i,j;
-      char *pat = (char*) (char *) malloc(l+1);
-      char *org = (char*) (char *) malloc(l*2+1);
+      char *pat = (char*) malloc(l+1);
+      char *org = (char*) malloc(l*2+1);
       if (pat==NULL || org==NULL) die("not enough memory");
       expand(org,format,l);
       // remove hyphenation encoders (digits) from pat
@@ -224,7 +222,7 @@ int main(int argc, const char* argv[]) {
         strncpy(subpat,pat+i,j); subpat[j]=0;
         if ((subpat_ndx = find_in(pattab_key,patterns,subpat))>=0) {
           int   newpat_ndx;
-          char *newpat= (char *) malloc(l+1);
+          char *newpat=(char *) malloc(l+1);
           if (newpat==NULL) die("not enough memory");
       //printf("%s is embedded in %s\n",pattab_val[subpat_ndx],pattab_val[p]);
           strncpy(newpat, pat+0,l); newpat[l]=0;

@@ -17,26 +17,21 @@ namespace UnitTests
             */
             
             
-            var test = new HyphenTests();
+            // var test = new HyphenTests();
             // test.CreationAndDestructionTest();
             // test.MemoryLeakTest();
             // test.UnicodeFilenameTest();
             // test.GermanUmlautTest();
-            test.CyrillicLanguagesTest();
-            test.NemethTests();
-            return;
+            // test.CyrillicLanguagesTest();
+            // test.NemethTests();
             
-          
-            /*
             var test = new HunspellTests();
             // test.AllDictionariesTest();
-            test.SpellComplexWordsTest();
+            // test.SpellComplexWordsTest();
             test.AddWordTest();
-            test.GermanUmlautTest();
-            test.UnicodeFilenameTest();
-            test.MemoryLeakTest();
-            return;
-            */
+            // test.GermanUmlautTest();
+            // test.UnicodeFilenameTest();
+            // test.MemoryLeakTest();
 
             /*
             var test = new InteropTests();

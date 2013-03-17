@@ -3,13 +3,15 @@
 #define _FILEMGR_HXX_
 
 #include "hunvisapi.h"
-
 #include "hunzip.hxx"
 #include <stdio.h>
 #include "../NHunspellExtensions.h"
 
 class LIBHUNSPELL_DLL_EXPORTED FileMgr
 {
+private:
+    FileMgr(const FileMgr&);
+    FileMgr& operator = (const FileMgr&);
 protected:
     FILE * fin;
     Hunzip * hin;

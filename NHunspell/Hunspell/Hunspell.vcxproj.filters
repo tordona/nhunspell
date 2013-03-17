@@ -140,7 +140,6 @@
     <None Include="hunspell\license.myspell">
       <Filter>Hunspell</Filter>
     </None>
-    <None Include="NHunspellExtensionsIntegrationInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Hunspell.rc" />
