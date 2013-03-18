@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -12,9 +13,10 @@
    height="297mm"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="NHunspell-Logo.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.1">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -40,8 +42,9 @@
      showgrid="false"
      inkscape:window-width="1268"
      inkscape:window-height="1099"
-     inkscape:window-x="1623"
-     inkscape:window-y="23" />
+     inkscape:window-x="2189"
+     inkscape:window-y="49"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -50,6 +53,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -85,5 +89,33 @@
          y="332.87778"><tspan
    style="fill:#ff0000"
    id="tspan3424">N</tspan>Hunspell</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:0.62396812;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3434-1"
+       width="68.52005"
+       height="37.246597"
+       x="98.061409"
+       y="379.45319"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+       inkscape:export-xdpi="41.639999"
+       inkscape:export-ydpi="41.639999"
+       ry="18.623299"
+       rx="18.623299" />
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:MSE-iT Head;-inkscape-font-specification:MSE-iT Head"
+       x="108.11739"
+       y="407.16461"
+       id="text2650-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+       inkscape:export-xdpi="41.639999"
+       inkscape:export-ydpi="41.639999"><tspan
+         sodipodi:role="line"
+         id="tspan2652-4"
+         x="108.11739"
+         y="407.16461"><tspan
+   style="fill:#ff0000"
+   id="tspan3424-0">N</tspan>H</tspan></text>
   </g>
 </svg>

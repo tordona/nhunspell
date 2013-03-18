@@ -4,8 +4,10 @@
     <version>1.1.0</version>
     <authors>Thomas Maierhofer</authors>
     <owners />
+    
     <licenseUrl>http://nhunspell.sourceforge.net/</licenseUrl>
     <projectUrl>http://nhunspell.sourceforge.net/</projectUrl>
+    <iconUrl>http://nhunspell.sourceforge.net/Images/NHunspell-Logo.png</iconUrl>
     <references>
       <reference file="NHunspell.dll" />
     </references>
