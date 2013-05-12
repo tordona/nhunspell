@@ -42,12 +42,17 @@ public class HunspellTests
             Assert.IsFalse(hunspell.Spell("phantasievord"));
             Assert.IsTrue( hunspell.Add("phantasievord"));
             Assert.IsTrue(hunspell.Spell("phantasievord"));
+            Assert.IsTrue(hunspell.Remove("phantasievord"));
+            Assert.IsFalse(hunspell.Spell("phantasievord"));
 
             Assert.IsFalse(hunspell.Spell("phantasos"));
             Assert.IsFalse(hunspell.Spell("phantasoses"));
             Assert.IsTrue( hunspell.AddWithAffix("phantasos", "fish") );
             Assert.IsTrue(hunspell.Spell("phantasos"));
             Assert.IsTrue(hunspell.Spell("phantasoses"));
+            Assert.IsTrue(hunspell.Remove("phantasos"));
+            Assert.IsFalse(hunspell.Spell("phantasos"));
+            Assert.IsFalse(hunspell.Spell("phantasoses"));
 
 
         }

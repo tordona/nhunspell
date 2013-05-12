@@ -14,53 +14,144 @@ namespace NHunspell
     using System.Threading;
 
     /// <summary>
-    /// Enables spell checking, hyphenation and thesaurus based synonym lookup in a thread safe manner.
+    ///   Enables spell checking, hyphenation and thesaurus based synonym lookup in a thread safe manner.
     /// </summary>
     public class SpellFactory : IDisposable
     {
-        #region Constants and Fields
+        #region Fields
 
         /// <summary>
-        /// The processors.
+        ///   The processors.
         /// </summary>
         private readonly int processors;
 
         /// <summary>
-        /// The disposed.
+        ///   The disposed.
         /// </summary>
         private volatile bool disposed;
 
         /// <summary>
-        /// The hunspell semaphore.
+        ///   The hunspell semaphore.
         /// </summary>
         private Semaphore hunspellSemaphore;
 
         /// <summary>
-        /// The hunspells.
+        ///   The hunspells.
         /// </summary>
         private Stack<Hunspell> hunspells;
 
+        private object hunspellsLock = new object();
+
         /// <summary>
-        /// The hyphen semaphore.
+        ///   The hyphen semaphore.
         /// </summary>
         private Semaphore hyphenSemaphore;
 
         /// <summary>
-        /// The hyphens.
+        ///   The hyphens.
         /// </summary>
         private Stack<Hyphen> hyphens;
 
+        private object hyphensLock = new object();
+
         /// <summary>
-        /// The my thes semaphore.
+        ///   The my thes semaphore.
         /// </summary>
         private Semaphore myThesSemaphore;
 
         /// <summary>
-        /// The my theses.
+        ///   The my theses.
         /// </summary>
         private Stack<MyThes> myTheses;
 
+        private object myThesesLock = new object();
+
+
         #endregion
+
+        Hunspell HunspellsPop()
+        {
+            if (this.IsDisposed)
+            {
+                throw new ObjectDisposedException("SpellFactory");
+            }
+
+            if (this.hunspells == null)
+            {
+                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
+            }
+
+            this.hunspellSemaphore.WaitOne();
+            lock (hunspellsLock)
+            {
+                return this.hunspells.Pop();
+            }
+        }
+
+        void HunspellsPush(Hunspell hunspell)
+        {
+            lock (hunspellsLock)
+            {
+                this.hunspells.Push(hunspell);
+            }
+            hunspellSemaphore.Release();
+        }
+
+        Hyphen HyphenPop()
+        {
+            if (this.IsDisposed)
+            {
+                throw new ObjectDisposedException("SpellFactory");
+            }
+
+            if (this.hyphens == null)
+            {
+                throw new InvalidOperationException("Hyphen Dictionary isn't loaded");
+            }
+
+            this.hyphenSemaphore.WaitOne();
+            lock (hyphensLock)
+            {
+                return this.hyphens.Pop();
+            }
+        }
+
+        void HyphenPush(Hyphen hyphen)
+        {
+            lock (hyphensLock)
+            {
+                this.hyphens.Push(hyphen);
+            }
+            hyphenSemaphore.Release();
+        }
+
+        MyThes MyThesPop()
+        {
+            if (this.IsDisposed)
+            {
+                throw new ObjectDisposedException("SpellFactory");
+            }
+
+            if (this.myTheses == null)
+            {
+                throw new InvalidOperationException("MyThes Dictionary isn't loaded");
+            }
+
+            this.myThesSemaphore.WaitOne();
+            lock (myThesesLock)
+            {
+                return this.myTheses.Pop();
+            }
+        }
+
+        void MyThesPush(MyThes myThes)
+        {
+            lock (myThesesLock)
+            {
+                this.myTheses.Push(myThes);
+            }
+            myThesSemaphore.Release();
+        }
 
         #region Constructors and Destructors
 
@@ -68,7 +159,7 @@ namespace NHunspell
         /// Initializes a new instance of the <see cref="SpellFactory"/> class.
         /// </summary>
         /// <param name="config">
-        /// The configuration of the language.
+        /// The configuration of the language. 
         /// </param>
         public SpellFactory(LanguageConfig config)
         {
@@ -81,8 +172,7 @@ namespace NHunspell
                 {
                     if (config.HunspellKey != null && config.HunspellKey != string.Empty)
                     {
-                        this.hunspells.Push(
-                            new Hunspell(config.HunspellAffFile, config.HunspellDictFile, config.HunspellKey));
+                        this.hunspells.Push(new Hunspell(config.HunspellAffFile, config.HunspellDictFile, config.HunspellKey));
                     }
                     else
                     {
@@ -116,14 +206,12 @@ namespace NHunspell
 
         #endregion
 
-        #region Properties
+        #region Public Properties
 
         /// <summary>
-        /// Gets a value indicating whether this instance is disposed.
+        ///   Gets a value indicating whether this instance is disposed.
         /// </summary>
-        /// <value>
-        /// 	<c>true</c> if this instance is disposed; otherwise, <c>false</c>.
-        /// </value>
+        /// <value> <c>true</c> if this instance is disposed; otherwise, <c>false</c> . </value>
         public bool IsDisposed
         {
             get
@@ -134,323 +222,32 @@ namespace NHunspell
 
         #endregion
 
-        #region Public Methods
+        #region Public Methods and Operators
 
         /// <summary>
         /// Analyzes the specified word.
         /// </summary>
         /// <param name="word">
-        /// The word.
+        /// The word. 
         /// </param>
         /// <returns>
-        /// List of strings with the morphology. One string per word stem
+        /// List of strings with the morphology. One string per word stem 
         /// </returns>
         public List<string> Analyze(string word)
         {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            this.hunspellSemaphore.WaitOne();
-            Hunspell current = null;
+            Hunspell hunspell = this.HunspellsPop();
             try
             {
-                current = this.hunspells.Pop();
-                return current.Analyze(word);
+                return hunspell.Analyze(word);
             }
             finally
             {
-                if (current != null)
-                {
-                    this.hunspells.Push(current);
-                }
-
-                this.hunspellSemaphore.Release();
+                this.HunspellsPush(hunspell);
             }
         }
 
         /// <summary>
-        /// Generates the specified word by example.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <param name="sample">
-        /// The sample.
-        /// </param>
-        /// <returns>
-        /// List of generated words, one per word stem
-        /// </returns>
-        public List<string> Generate(string word, string sample)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            this.hunspellSemaphore.WaitOne();
-            Hunspell current = null;
-            try
-            {
-                current = this.hunspells.Pop();
-                return current.Generate(word, sample);
-            }
-            finally
-            {
-                if (current != null)
-                {
-                    this.hunspells.Push(current);
-                }
-
-                this.hunspellSemaphore.Release();
-            }
-        }
-
-        /// <summary>
-        /// Hyphenates the specified word.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <returns>
-        /// the result of the hyphenation
-        /// </returns>
-        public HyphenResult Hyphenate(string word)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hyphen Dictionary isn't loaded");
-            }
-
-            this.hyphenSemaphore.WaitOne();
-            Hyphen current = null;
-            try
-            {
-                current = this.hyphens.Pop();
-                return current.Hyphenate(word);
-            }
-            finally
-            {
-                if (current != null)
-                {
-                    this.hyphens.Push(current);
-                }
-
-                this.hyphenSemaphore.Release();
-            }
-        }
-
-        /// <summary>
-        /// Look up the synonyms for the word.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <param name="useGeneration">
-        /// if set to <c>true</c> use generation to get synonyms over the word stem.
-        /// </param>
-        /// <returns>
-        /// </returns>
-        public ThesResult LookupSynonyms(string word, bool useGeneration)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.myTheses == null)
-            {
-                throw new InvalidOperationException("MyThes Dictionary isn't loaded");
-            }
-
-            if (useGeneration && this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            MyThes currentThes = null;
-            Hunspell currentHunspell = null;
-            this.myThesSemaphore.WaitOne();
-            if (useGeneration)
-            {
-                this.hunspellSemaphore.WaitOne();
-            }
-
-            try
-            {
-                currentThes = this.myTheses.Pop();
-                if (useGeneration)
-                {
-                    currentHunspell = this.hunspells.Pop();
-                    return currentThes.Lookup(word, currentHunspell);
-                }
-
-                return currentThes.Lookup(word);
-            }
-            finally
-            {
-                if (currentThes != null)
-                {
-                    this.myTheses.Push(currentThes);
-                }
-
-                if (currentHunspell != null)
-                {
-                    this.hunspells.Push(currentHunspell);
-                }
-
-                this.myThesSemaphore.Release();
-                if (useGeneration)
-                {
-                    this.hunspellSemaphore.Release();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Spell check the specified word.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <returns>
-        /// true if word is correct, otherwise false. 
-        /// </returns>
-        public bool Spell(string word)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            this.hunspellSemaphore.WaitOne();
-            Hunspell current = null;
-            try
-            {
-                current = this.hunspells.Pop();
-                return current.Spell(word);
-            }
-            finally
-            {
-                if (current != null)
-                {
-                    this.hunspells.Push(current);
-                }
-
-                this.hunspellSemaphore.Release();
-            }
-        }
-
-        /// <summary>
-        /// Stems the specified word.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <returns>
-        /// list of word stems
-        /// </returns>
-        public List<string> Stem(string word)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            this.hunspellSemaphore.WaitOne();
-            Hunspell current = null;
-            try
-            {
-                current = this.hunspells.Pop();
-                return current.Stem(word);
-            }
-            finally
-            {
-                if (current != null)
-                {
-                    this.hunspells.Push(current);
-                }
-
-                this.hunspellSemaphore.Release();
-            }
-        }
-
-        /// <summary>
-        /// The suggest.
-        /// </summary>
-        /// <param name="word">
-        /// The word.
-        /// </param>
-        /// <returns>
-        /// </returns>
-        /// <exception cref="ObjectDisposedException">
-        /// </exception>
-        /// <exception cref="InvalidOperationException">
-        /// </exception>
-        public List<string> Suggest(string word)
-        {
-            if (this.IsDisposed)
-            {
-                throw new ObjectDisposedException("SpellFactory");
-            }
-
-            if (this.hunspells == null)
-            {
-                throw new InvalidOperationException("Hunspell Dictionary isn't loaded");
-            }
-
-            this.hunspellSemaphore.WaitOne();
-            Hunspell current = null;
-            try
-            {
-                current = this.hunspells.Pop();
-                return current.Suggest(word);
-            }
-            finally
-            {
-                if (current != null)
-                {
-                    this.hunspells.Push(current);
-                }
-
-                this.hunspellSemaphore.Release();
-            }
-        }
-
-        #endregion
-
-        #region Implemented Interfaces
-
-        #region IDisposable
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        ///   Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
         {
@@ -469,7 +266,7 @@ namespace NHunspell
 
                 if (this.hunspells != null)
                 {
-                    foreach (Hunspell hunspell in this.hunspells)
+                    foreach (var hunspell in this.hunspells)
                     {
                         hunspell.Dispose();
                     }
@@ -488,7 +285,7 @@ namespace NHunspell
 
                 if (this.hyphens != null)
                 {
-                    foreach (Hyphen hyphen in this.hyphens)
+                    foreach (var hyphen in this.hyphens)
                     {
                         hyphen.Dispose();
                     }
@@ -507,7 +304,7 @@ namespace NHunspell
 
                 if (this.myTheses != null)
                 {
-                    foreach (MyThes myThes in this.myTheses)
+                    foreach (var myThes in this.myTheses)
                     {
                         // myThes.Dispose();
                     }
@@ -519,7 +316,165 @@ namespace NHunspell
             }
         }
 
-        #endregion
+        /// <summary>
+        /// Generates the specified word by example.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <param name="sample">
+        /// The sample. 
+        /// </param>
+        /// <returns>
+        /// List of generated words, one per word stem 
+        /// </returns>
+        public List<string> Generate(string word, string sample)
+        {
+            Hunspell hunspell = this.HunspellsPop();
+            try
+            {
+                return hunspell.Generate(word, sample);
+            }
+            finally
+            {
+                this.HunspellsPush(hunspell);
+            }
+        }
+
+        /// <summary>
+        /// Hyphenates the specified word.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <returns>
+        /// the result of the hyphenation 
+        /// </returns>
+        public HyphenResult Hyphenate(string word)
+        {
+            Hyphen hyphen = this.HyphenPop();
+            try
+            {
+                return hyphen.Hyphenate(word);
+            }
+            finally
+            {
+                this.HyphenPush(hyphen);
+            }
+        }
+
+        /// <summary>
+        /// Look up the synonyms for the word.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <param name="useGeneration">
+        /// if set to <c>true</c> use generation to get synonyms over the word stem. 
+        /// </param>
+        /// <returns>
+        /// The <see cref="ThesResult"/>.
+        /// </returns>
+        public ThesResult LookupSynonyms(string word, bool useGeneration)
+        {
+
+
+            MyThes currentThes = null;
+            Hunspell currentHunspell = null;
+            try
+            {
+                currentThes = this.MyThesPop();
+                if (useGeneration)
+                {
+                    currentHunspell = this.HunspellsPop();
+                    return currentThes.Lookup(word, currentHunspell);
+                }
+
+                return currentThes.Lookup(word);
+            }
+            finally
+            {
+                if (currentThes != null)
+                {
+                    this.MyThesPush(currentThes);
+                }
+
+                if (currentHunspell != null)
+                {
+                    this.HunspellsPush(currentHunspell);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Spell check the specified word.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <returns>
+        /// true if word is correct, otherwise false. 
+        /// </returns>
+        public bool Spell(string word)
+        {
+            Hunspell hunspell = this.HunspellsPop();
+            try
+            {
+                return hunspell.Spell(word);
+            }
+            finally
+            {
+                this.HunspellsPush(hunspell);
+            }
+        }
+
+        /// <summary>
+        /// Stems the specified word.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <returns>
+        /// list of word stems 
+        /// </returns>
+        public List<string> Stem(string word)
+        {
+            Hunspell hunspell = this.HunspellsPop();
+            try
+            {
+                return hunspell.Stem(word);
+            }
+            finally
+            {
+                this.HunspellsPush(hunspell);
+            }
+        }
+
+        /// <summary>
+        /// The suggest.
+        /// </summary>
+        /// <param name="word">
+        /// The word. 
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
+        /// <exception cref="ObjectDisposedException">
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// </exception>
+        public List<string> Suggest(string word)
+        {
+            Hunspell hunspell = this.HunspellsPop();
+            try
+            {
+                return hunspell.Suggest(word);
+            }
+            finally
+            {
+                this.HunspellsPush(hunspell);
+            }
+        }
 
         #endregion
     }
