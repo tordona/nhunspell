@@ -11,7 +11,7 @@ public class MyThesTests
     [Test]
     public void ThesContainAllWordsTest()
     {
-        string[] thesFiles = new string[] { "th_de_DE_v2","th_en_US_new","th_it_IT_v2" };
+        string[] thesFiles = new string[] {"th_de_DE_v2", "th_en_US_new", "th_it_IT_v2", "th_es_ES_v2" };
         foreach (string file in thesFiles)
         {
             string[] wordsInIndex = LoadIndex(file+".idx");
@@ -19,6 +19,8 @@ public class MyThesTests
             var thes = new MyThes(file+".dat");
             foreach (string word in wordsInIndex)
             {
+                if (word.StartsWith("(") || word.StartsWith("-")) continue;
+
                 var result = thes.Lookup(word);
                 Assert.IsNotNull(result, "Failed Word: " + word);
             }
