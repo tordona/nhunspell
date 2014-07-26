@@ -53,8 +53,6 @@ public class HunspellTests
             Assert.IsTrue(hunspell.Remove("phantasos"));
             Assert.IsFalse(hunspell.Spell("phantasos"));
             Assert.IsFalse(hunspell.Spell("phantasoses"));
-
-
         }
     }
 

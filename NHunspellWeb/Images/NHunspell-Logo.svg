@@ -34,16 +34,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="211.18201"
-     inkscape:cy="693.50796"
+     inkscape:zoom="1.0622561"
+     inkscape:cx="243.97101"
+     inkscape:cy="803.58939"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1268"
+     inkscape:window-width="1479"
      inkscape:window-height="1099"
-     inkscape:window-x="2189"
-     inkscape:window-y="49"
+     inkscape:window-x="2099"
+     inkscape:window-y="18"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -62,33 +62,49 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect3434"
-       width="177.78688"
-       height="36.870567"
-       x="93.944191"
-       y="305.35437"
-       inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
-       inkscape:export-xdpi="95"
+       rx="12.441929"
+       ry="11.052496"
        inkscape:export-ydpi="95"
-       ry="18.435284"
-       rx="18.435284" />
-    <text
-       xml:space="preserve"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:MSE-iT Head;-inkscape-font-specification:MSE-iT Head"
-       x="103.81216"
-       y="332.87778"
-       id="text2650"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
        inkscape:export-xdpi="95"
-       inkscape:export-ydpi="95"><tspan
-         sodipodi:role="line"
-         id="tspan2652"
-         x="103.81216"
-         y="332.87778"><tspan
-   style="fill:#ff0000"
-   id="tspan3424">N</tspan>Hunspell</tspan></text>
+       inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+       y="63.584164"
+       x="382.17798"
+       height="276.11963"
+       width="276.76846"
+       id="rect3923"
+       style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:3;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <g
+       id="g3925"
+       transform="translate(-13.179496,-217.46169)">
+      <rect
+         rx="12.441929"
+         ry="11.052496"
+         inkscape:export-ydpi="95"
+         inkscape:export-xdpi="95"
+         inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+         y="247.9483"
+         x="95.845856"
+         height="34.479317"
+         width="235.64476"
+         id="rect3434"
+         style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:2.87675333;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         inkscape:export-ydpi="95"
+         inkscape:export-xdpi="95"
+         inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+         sodipodi:linespacing="125%"
+         id="text2650"
+         y="274.50601"
+         x="100.30579"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+         xml:space="preserve"><tspan
+           y="274.50601"
+           x="100.30579"
+           id="tspan2652"
+           sodipodi:role="line"><tspan
+   id="tspan3424"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg">N</tspan>Hunspell</tspan></text>
+    </g>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:0.62396812;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3434-1"
@@ -117,5 +133,246 @@
          y="407.16461"><tspan
    style="fill:#ff0000"
    id="tspan3424-0">N</tspan>H</tspan></text>
+    <g
+       id="g3804"
+       inkscape:export-xdpi="151.02"
+       inkscape:export-ydpi="151.02">
+      <g
+         inkscape:export-ydpi="151.02"
+         inkscape:export-xdpi="151.02"
+         inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-300png.png"
+         transform="translate(30.357143,-30)"
+         id="g3018">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect3434-17"
+           width="177.78688"
+           height="36.870567"
+           x="61.820843"
+           y="475.71262"
+           inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+           inkscape:export-xdpi="95"
+           inkscape:export-ydpi="95"
+           ry="18.435284"
+           rx="18.435284" />
+        <text
+           xml:space="preserve"
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:MSE-iT Head;-inkscape-font-specification:MSE-iT Head"
+           x="71.688805"
+           y="503.23602"
+           id="text2650-4"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+           inkscape:export-xdpi="95"
+           inkscape:export-ydpi="95"><tspan
+             sodipodi:role="line"
+             id="tspan2652-0"
+             x="71.688805"
+             y="503.23602"><tspan
+   style="fill:#ff0000"
+   id="tspan3424-9">N</tspan>Hunspell</tspan></text>
+      </g>
+      <text
+         inkscape:export-ydpi="151.02"
+         inkscape:export-xdpi="151.02"
+         inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-300png.png"
+         sodipodi:linespacing="125%"
+         id="text3024"
+         y="509.86218"
+         x="180.75697"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#003399;fill-opacity:1;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI Bold"
+         xml:space="preserve"><tspan
+           y="509.86218"
+           x="180.75697"
+           id="tspan3026"
+           sodipodi:role="line">Spell Check</tspan><tspan
+           id="tspan3032"
+           y="544.86218"
+           x="180.75697"
+           sodipodi:role="line">Hyphenation</tspan><tspan
+           id="tspan3034"
+           y="579.86218"
+           x="180.75697"
+           sodipodi:role="line">Thesaurus</tspan></text>
+    </g>
+    <text
+       inkscape:export-ydpi="41.639999"
+       inkscape:export-xdpi="41.639999"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+       sodipodi:linespacing="125%"
+       id="text3028"
+       y="185.80142"
+       x="22.589792"
+       style="font-size:41.96721268px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:MSE-iT Head;-inkscape-font-specification:MSE-iT Head"
+       xml:space="preserve"><tspan
+         y="185.80142"
+         x="22.589792"
+         id="tspan3030"
+         sodipodi:role="line"><tspan
+           id="tspan3033"
+           style="fill:#ff0000">N</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:41.96721268px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:MSE-iT Head;-inkscape-font-specification:MSE-iT Head"
+       x="43.761467"
+       y="204.37286"
+       id="text2650-7-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+       inkscape:export-xdpi="41.639999"
+       inkscape:export-ydpi="41.639999"><tspan
+         sodipodi:role="line"
+         id="tspan2652-4-4"
+         x="43.761467"
+         y="204.37286">H</tspan></text>
+    <g
+       id="g3949"
+       transform="matrix(2.0645161,0,0,2.0645161,-5.2623249,-431.14024)"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-128.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="7.0577431"
+         ry="7.1875553"
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-32.png"
+         y="317.8848"
+         x="1.926131"
+         height="59.191147"
+         width="59.191147"
+         id="rect3434-1-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:2.80885458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <g
+         inkscape:export-ydpi="45"
+         inkscape:export-xdpi="45"
+         inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-32.png"
+         transform="matrix(0.98994143,0,0,0.98994143,-106.59339,214.70466)"
+         id="g3057">
+        <text
+           xml:space="preserve"
+           style="font-size:41.96721268px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+           x="113.13142"
+           y="138.13039"
+           id="text3035"
+           sodipodi:linespacing="125%"
+           inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+           inkscape:export-xdpi="41.639999"
+           inkscape:export-ydpi="41.639999"><tspan
+             sodipodi:role="line"
+             id="tspan3037"
+             x="113.13142"
+             y="138.13039"><tspan
+               style="font-size:41.96721268px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+               id="tspan3039">N</tspan></tspan></text>
+        <text
+           inkscape:export-ydpi="41.639999"
+           inkscape:export-xdpi="41.639999"
+           inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\Favicon.png"
+           sodipodi:linespacing="125%"
+           id="text3041"
+           y="156.76549"
+           x="126.0993"
+           style="font-size:41.96729279px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+           xml:space="preserve"
+           transform="scale(1.0000019,0.9999981)"><tspan
+             y="156.76549"
+             x="126.0993"
+             id="tspan3043"
+             sodipodi:role="line">H</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+       x="391.73013"
+       y="97.271576"
+       id="text2650-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+       inkscape:export-xdpi="95"
+       inkscape:export-ydpi="95"><tspan
+         sodipodi:role="line"
+         id="tspan2652-48"
+         x="391.73013"
+         y="97.271576"><tspan
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+   id="tspan3424-8">N</tspan>Hunspell</tspan></text>
+    <text
+       inkscape:export-ydpi="151.02"
+       inkscape:export-xdpi="151.02"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-300png.png"
+       sodipodi:linespacing="125%"
+       id="text3904"
+       y="138.34715"
+       x="392.19934"
+       style="font-size:32.26786041px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI Bold"
+       xml:space="preserve"><tspan
+         y="138.34715"
+         x="392.19934"
+         id="tspan3906"
+         sodipodi:role="line">● Spell Check</tspan><tspan
+         id="tspan3908"
+         y="178.68198"
+         x="392.19934"
+         sodipodi:role="line">● Hyphenation</tspan><tspan
+         id="tspan3910"
+         y="219.0168"
+         x="392.19934"
+         sodipodi:role="line">● Thesaurus</tspan></text>
+    <g
+       transform="translate(280.53499,160.03673)"
+       id="g3931">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#1970ff;stroke-width:2.87675333;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3933"
+         width="235.64476"
+         height="34.479317"
+         x="95.845856"
+         y="247.9483"
+         inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95"
+         ry="11.052496"
+         rx="12.441929" />
+      <text
+         xml:space="preserve"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+         x="100.30579"
+         y="274.50601"
+         id="text3935"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="D:\CheckOutLibraries\NHunspellWeb\Images\NHunspell-Logo.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95"><tspan
+           sodipodi:role="line"
+           id="tspan3937"
+           x="100.30579"
+           y="274.50601"><tspan
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Ethnocentric Rg;-inkscape-font-specification:Ethnocentric Rg"
+   id="tspan3939">N</tspan>Hunspell</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:32.26786041px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#003399;fill-opacity:1;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI Bold"
+       x="381.07666"
+       y="485.95544"
+       id="text3941"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\Work\NHunspell\NHunspellWeb\Images\NHunspell-300png.png"
+       inkscape:export-xdpi="151.02"
+       inkscape:export-ydpi="151.02"><tspan
+         sodipodi:role="line"
+         id="tspan3943"
+         x="381.07666"
+         y="485.95544">● Spell Check</tspan><tspan
+         sodipodi:role="line"
+         x="381.07666"
+         y="526.29028"
+         id="tspan3945">● Hyphenation</tspan><tspan
+         sodipodi:role="line"
+         x="381.07666"
+         y="566.62512"
+         id="tspan3947">● Thesaurus</tspan></text>
   </g>
 </svg>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Build configuration for NHunspell -->
+<BuildConfig
+  xmlns="http://www.crawler-lib.net/buildtools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.crawler-lib.net buildconfig.xsd">
+
+  <Solutions>
+    <Solution Base="" Path="NHunspell.sln" Version="2.1">
+
+      <Repository Type="HG" Url="http://buildtools:bt1966@buildserver:8010/scm/hg/Crawler-Lib/CrawlerLib-Engine" />
+
+      <Protect>
+        <Settings Tool="IntelliLock" Path="CrawlerLib.Engine\CrawlerLib.Engine.ilproj" />
+      </Protect>
+
+      <Test>
+        <Settings Tool="NUnit" Assembly="CrawlerLib.Engine.Tests\bin\release\CrawlerLib.Engine.Tests.exe"
+                  Output="NUnit-CrawlerLib.Engine.Tests.xml" />
+        <Settings Tool="FxCop" Assembly="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.dll"
+                  Output="FxCop-CrawlerLib.Engine.xml" />
+        <Settings Tool="FxCop" Assembly="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.dll"
+                  Output="FxCop-CrawlerLib.Engine.TestHelper.xml" />
+      </Test>
+
+      <Release server="ftp://buildtools:bt1966@buildserver">
+        <File Path="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.dll" Zipped="CrawlerLib.Engine.dll" Version="true" />
+        <File Path="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.pdb" Zipped="CrawlerLib.Engine.pdb" Version="false" />
+        <File Path="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.dll"
+              Zipped="CrawlerLib.Engine.TestHelper.dll" Version="true" />
+        <File Path="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.pdb"
+              Zipped="CrawlerLib.Engine.TestHelper.pdb" Version="false" />
+      </Release>
+
+      <Nuget feed="http://buildserver:8000/" apiKey="ca6dfcfa-d08e-4f56-921e-74afc654dc4f">
+        <Package Path="CrawlerLib.Engine\CrawlerLib.Engine.nuspec" />
+        <Package Path="CrawlerLib.Engine.TestHelper\CrawlerLib.Engine.TestHelper.nuspec" />
+      </Nuget>
+    </Solution>
+
+  </Solutions>
+</BuildConfig>

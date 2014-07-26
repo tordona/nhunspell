@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>4.0.8482.1</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/SQLCE_EULA_ENU.rtf</licenseUrl>
+    <id>SqlServerCompact</id>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>SQL Server Compact. An embedded SQL database.</description>
+    <summary>SQL Server Compact. An embedded SQL database.</summary>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="Content\web.config.transform" target="Content\web.config.transform" />
+    <file src="lib\System.Data.SqlServerCe.dll" target="lib\System.Data.SqlServerCe.dll" />
+    <file src="NativeBinaries\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" target="NativeBinaries\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <file src="NativeBinaries\amd64\Microsoft.VC90.CRT\msvcr90.dll" target="NativeBinaries\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <file src="NativeBinaries\amd64\Microsoft.VC90.CRT\README_ENU.txt" target="NativeBinaries\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <file src="NativeBinaries\amd64\sqlcecompact40.dll" target="NativeBinaries\amd64\sqlcecompact40.dll" />
+    <file src="NativeBinaries\amd64\sqlceer40EN.dll" target="NativeBinaries\amd64\sqlceer40EN.dll" />
+    <file src="NativeBinaries\amd64\sqlceme40.dll" target="NativeBinaries\amd64\sqlceme40.dll" />
+    <file src="NativeBinaries\amd64\sqlceqp40.dll" target="NativeBinaries\amd64\sqlceqp40.dll" />
+    <file src="NativeBinaries\amd64\sqlcese40.dll" target="NativeBinaries\amd64\sqlcese40.dll" />
+    <file src="NativeBinaries\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" target="NativeBinaries\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <file src="NativeBinaries\x86\Microsoft.VC90.CRT\msvcr90.dll" target="NativeBinaries\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <file src="NativeBinaries\x86\Microsoft.VC90.CRT\README_ENU.txt" target="NativeBinaries\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <file src="NativeBinaries\x86\sqlcecompact40.dll" target="NativeBinaries\x86\sqlcecompact40.dll" />
+    <file src="NativeBinaries\x86\sqlceer40EN.dll" target="NativeBinaries\x86\sqlceer40EN.dll" />
+    <file src="NativeBinaries\x86\sqlceme40.dll" target="NativeBinaries\x86\sqlceme40.dll" />
+    <file src="NativeBinaries\x86\sqlceqp40.dll" target="NativeBinaries\x86\sqlceqp40.dll" />
+    <file src="NativeBinaries\x86\sqlcese40.dll" target="NativeBinaries\x86\sqlcese40.dll" />
+    <file src="Tools\GetSqlCEPostBuildCmd.ps1" target="Tools\GetSqlCEPostBuildCmd.ps1" />
+    <file src="Tools\install.ps1" target="Tools\install.ps1" />
+    <file src="Tools\uninstall.ps1" target="Tools\uninstall.ps1" />
+    <file src="SQLCE_EULA_ENU.rtf" target="SQLCE_EULA_ENU.rtf" />
+  </files>
+</package>

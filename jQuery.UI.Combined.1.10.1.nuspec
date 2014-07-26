@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>jQuery.UI.Combined</id>
+        <version>1.10.1</version>
+        <title>jQuery UI (Combined Library)</title>
+        <authors>jQuery UI Team</authors>
+        <owners>jQuery UI Team</owners>
+        <licenseUrl>http://jquery.org/license</licenseUrl>
+        <projectUrl>http://jqueryui.com/</projectUrl>
+        <iconUrl>http://nuget.org/Media/Default/Packages/jQuery.UI.Combined/1.8.9/jQueryUILogo.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>jQuery UI is an open source library of interface components — interactions, full-featured widgets, and animation effects — based on the stellar jQuery javascript library . Each component is built according to jQuery's event-driven architecture (find something, manipulate it) and is themeable, making it easy for developers of any skill level to integrate and extend into their own code.
+    NOTE: This package is maintained on behalf of the library owners by the NuGet Community Packages project at http://nugetpackages.codeplex.com/</description>
+        <summary>The full jQuery UI library as a single combined file. Includes the base theme.</summary>
+        <language>en-US</language>
+        <tags>jQuery jQueryUI plugins</tags>
+        <dependencies>
+            <dependency id="jQuery" version="1.6.4" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Content\Content\themes\base\images\animated-overlay.gif" target="Content\Content\themes\base\images\animated-overlay.gif" />
+        <file src="Content\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" target="Content\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" target="Content\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" target="Content\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" target="Content\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" target="Content\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" target="Content\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" target="Content\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+        <file src="Content\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" target="Content\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+        <file src="Content\Content\themes\base\images\ui-icons_222222_256x240.png" target="Content\Content\themes\base\images\ui-icons_222222_256x240.png" />
+        <file src="Content\Content\themes\base\images\ui-icons_2e83ff_256x240.png" target="Content\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+        <file src="Content\Content\themes\base\images\ui-icons_454545_256x240.png" target="Content\Content\themes\base\images\ui-icons_454545_256x240.png" />
+        <file src="Content\Content\themes\base\images\ui-icons_888888_256x240.png" target="Content\Content\themes\base\images\ui-icons_888888_256x240.png" />
+        <file src="Content\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" target="Content\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+        <file src="Content\Content\themes\base\minified\images\animated-overlay.gif" target="Content\Content\themes\base\minified\images\animated-overlay.gif" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" target="Content\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" target="Content\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" target="Content\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" target="Content\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" target="Content\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" target="Content\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" target="Content\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" target="Content\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-icons_222222_256x240.png" target="Content\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" target="Content\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-icons_454545_256x240.png" target="Content\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-icons_888888_256x240.png" target="Content\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+        <file src="Content\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" target="Content\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+        <file src="Content\Content\themes\base\minified\jquery-ui.min.css" target="Content\Content\themes\base\minified\jquery-ui.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.accordion.min.css" target="Content\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.autocomplete.min.css" target="Content\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.button.min.css" target="Content\Content\themes\base\minified\jquery.ui.button.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.core.min.css" target="Content\Content\themes\base\minified\jquery.ui.core.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.datepicker.min.css" target="Content\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.dialog.min.css" target="Content\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.menu.min.css" target="Content\Content\themes\base\minified\jquery.ui.menu.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.progressbar.min.css" target="Content\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.resizable.min.css" target="Content\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.selectable.min.css" target="Content\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.slider.min.css" target="Content\Content\themes\base\minified\jquery.ui.slider.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.spinner.min.css" target="Content\Content\themes\base\minified\jquery.ui.spinner.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.tabs.min.css" target="Content\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.theme.min.css" target="Content\Content\themes\base\minified\jquery.ui.theme.min.css" />
+        <file src="Content\Content\themes\base\minified\jquery.ui.tooltip.min.css" target="Content\Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+        <file src="Content\Content\themes\base\jquery-ui.css" target="Content\Content\themes\base\jquery-ui.css" />
+        <file src="Content\Content\themes\base\jquery.ui.accordion.css" target="Content\Content\themes\base\jquery.ui.accordion.css" />
+        <file src="Content\Content\themes\base\jquery.ui.all.css" target="Content\Content\themes\base\jquery.ui.all.css" />
+        <file src="Content\Content\themes\base\jquery.ui.autocomplete.css" target="Content\Content\themes\base\jquery.ui.autocomplete.css" />
+        <file src="Content\Content\themes\base\jquery.ui.base.css" target="Content\Content\themes\base\jquery.ui.base.css" />
+        <file src="Content\Content\themes\base\jquery.ui.button.css" target="Content\Content\themes\base\jquery.ui.button.css" />
+        <file src="Content\Content\themes\base\jquery.ui.core.css" target="Content\Content\themes\base\jquery.ui.core.css" />
+        <file src="Content\Content\themes\base\jquery.ui.datepicker.css" target="Content\Content\themes\base\jquery.ui.datepicker.css" />
+        <file src="Content\Content\themes\base\jquery.ui.dialog.css" target="Content\Content\themes\base\jquery.ui.dialog.css" />
+        <file src="Content\Content\themes\base\jquery.ui.menu.css" target="Content\Content\themes\base\jquery.ui.menu.css" />
+        <file src="Content\Content\themes\base\jquery.ui.progressbar.css" target="Content\Content\themes\base\jquery.ui.progressbar.css" />
+        <file src="Content\Content\themes\base\jquery.ui.resizable.css" target="Content\Content\themes\base\jquery.ui.resizable.css" />
+        <file src="Content\Content\themes\base\jquery.ui.selectable.css" target="Content\Content\themes\base\jquery.ui.selectable.css" />
+        <file src="Content\Content\themes\base\jquery.ui.slider.css" target="Content\Content\themes\base\jquery.ui.slider.css" />
+        <file src="Content\Content\themes\base\jquery.ui.spinner.css" target="Content\Content\themes\base\jquery.ui.spinner.css" />
+        <file src="Content\Content\themes\base\jquery.ui.tabs.css" target="Content\Content\themes\base\jquery.ui.tabs.css" />
+        <file src="Content\Content\themes\base\jquery.ui.theme.css" target="Content\Content\themes\base\jquery.ui.theme.css" />
+        <file src="Content\Content\themes\base\jquery.ui.tooltip.css" target="Content\Content\themes\base\jquery.ui.tooltip.css" />
+        <file src="Content\Scripts\jquery-ui-1.10.1.js" target="Content\Scripts\jquery-ui-1.10.1.js" />
+        <file src="Content\Scripts\jquery-ui-1.10.1.min.js" target="Content\Scripts\jquery-ui-1.10.1.min.js" />
+        <file src="Tools\common.ps1" target="Tools\common.ps1" />
+        <file src="Tools\install.ps1" target="Tools\install.ps1" />
+        <file src="Tools\uninstall.ps1" target="Tools\uninstall.ps1" />
+    </files>
+</package>

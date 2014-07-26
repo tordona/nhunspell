@@ -28,7 +28,7 @@ namespace CSharpConsoleSamples
                 Console.WriteLine("Recommendation is spelled " + (correct ? "correct" : "not correct"));
 
                 Console.WriteLine("");
-                Console.WriteLine("Make suggestions for the word 'Recommendatio'");
+                Console.WriteLine("Make suggestions for the misspelled word 'Recommendatio'");
                 List<string> suggestions = hunspell.Suggest("Recommendatio");
                 Console.WriteLine("There are " + suggestions.Count.ToString() + " suggestions" );
                 foreach (string suggestion in suggestions)
@@ -36,13 +36,6 @@ namespace CSharpConsoleSamples
                     Console.WriteLine("Suggestion is: " + suggestion );
                 }
 
-                Console.WriteLine("");
-                Console.WriteLine("Analyze the word 'decompressed'");
-                List<string> morphs = hunspell.Analyze("decompressed");
-                foreach (string morph in morphs)
-                {
-                    Console.WriteLine("Morph is: " + morph);
-                }
 
                 Console.WriteLine("");
                 Console.WriteLine("Find the word stem of the word 'decompressed'");
@@ -59,7 +52,15 @@ namespace CSharpConsoleSamples
                 {
                     Console.WriteLine("Generated word is: " + stem);
                 }
-                
+
+                Console.WriteLine("");
+                Console.WriteLine("Analyze the word 'decompressed'");
+                List<string> morphs = hunspell.Analyze("decompressed");
+                foreach (string morph in morphs)
+                {
+                    Console.WriteLine("Morph is: " + morph);
+                }
+
             }
 
             Console.WriteLine();
