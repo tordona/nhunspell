@@ -7,36 +7,56 @@
   xsi:schemaLocation="http://www.crawler-lib.net buildconfig.xsd">
 
   <Solutions>
-    <Solution Base="" Path="NHunspell.sln" Version="2.1">
+    <Solution Name ="NHunspell" Version="1.2">
 
-      <Repository Type="HG" Url="http://buildtools:bt1966@buildserver:8010/scm/hg/Crawler-Lib/CrawlerLib-Engine" />
+      <Repository Type="HG" Url="http://opensource:xxxxxx@buildserver:8010/scm/hg/General/NHunspell" />
 
-      <Protect>
-        <Settings Tool="IntelliLock" Path="CrawlerLib.Engine\CrawlerLib.Engine.ilproj" />
-      </Protect>
+      <Build>
+        <Settings Base ="..\Hunspell" Path="HunspellWindows.sln" VersionTool="Autover" BuildTool="MSBuild" NuGet="true">
+          <Target Configuration="Release" Platform="x86" />
+          <Target Configuration="Release" Platform="x64" />
+        </Settings> 
+        
+        <Settings Base ="" Path="NHunspell.sln" VersionTool="Autover" BuildTool="MSBuild" NuGet="true">
+          <Target Configuration="Release" Platform="Any CPU" />
+          <!--
+          <Target Configuration="Release" Platform="x86" />
+          <Target Configuration="Release" Platform="x64" />
+          -->
+        </Settings> 
+      </Build>
+      
 
       <Test>
-        <Settings Tool="NUnit" Assembly="CrawlerLib.Engine.Tests\bin\release\CrawlerLib.Engine.Tests.exe"
-                  Output="NUnit-CrawlerLib.Engine.Tests.xml" />
-        <Settings Tool="FxCop" Assembly="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.dll"
-                  Output="FxCop-CrawlerLib.Engine.xml" />
-        <Settings Tool="FxCop" Assembly="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.dll"
-                  Output="FxCop-CrawlerLib.Engine.TestHelper.xml" />
+        <Settings Tool="NUnit" Assembly="UnitTests\bin\release\UnitTests.exe" Output="NUnitTestResult.xml"/>
+        <Settings Tool="FxCop" Assembly="UnitTests\bin\release\NHunspell.dll" Output="FxCopTestResult.xml"/>
       </Test>
 
-      <Release server="ftp://buildtools:bt1966@buildserver">
-        <File Path="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.dll" Zipped="CrawlerLib.Engine.dll" Version="true" />
-        <File Path="CrawlerLib.Engine\bin\release\CrawlerLib.Engine.pdb" Zipped="CrawlerLib.Engine.pdb" Version="false" />
-        <File Path="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.dll"
-              Zipped="CrawlerLib.Engine.TestHelper.dll" Version="true" />
-        <File Path="CrawlerLib.Engine.TestHelper\bin\release\CrawlerLib.Engine.TestHelper.pdb"
-              Zipped="CrawlerLib.Engine.TestHelper.pdb" Version="false" />
+      <!-- Generate Packages -->
+      <Package>
+        <Settings Tool="NuGet" Path="NHunspell.nuspec" />
+      </Package>      
+     
+     
+      
+      <Release>
+        <File Path="UnitTests\bin\release\NHunspell.dll" Zipped="NHunspell.dll" Version="true" />
+        <File Path="UnitTests\bin\release\NHunspell.pdb" Zipped="NHunspell.pdb" Version="false" />
+        <File Path="UnitTests\bin\release\Hunspellx64.dll" Zipped="Hunspellx64.dll" Version="true" />
+        <File Path="UnitTests\bin\release\Hunspellx64.pdb" Zipped="Hunspellx64.pdb" Version="false" />
+        <File Path="UnitTests\bin\release\Hunspellx86.dll" Zipped="Hunspellx86.dll" Version="true" />
+        <File Path="UnitTests\bin\release\Hunspellx86.pdb" Zipped="Hunspellx86.pdb" Version="false" />
       </Release>
 
-      <Nuget feed="http://buildserver:8000/" apiKey="ca6dfcfa-d08e-4f56-921e-74afc654dc4f">
-        <Package Path="CrawlerLib.Engine\CrawlerLib.Engine.nuspec" />
-        <Package Path="CrawlerLib.Engine.TestHelper\CrawlerLib.Engine.TestHelper.nuspec" />
-      </Nuget>
+      <!-- Publishing Files, {VERSION} in the path will be replaced with the current build version-->
+      <Publish>
+        <Settings Tool="FTP" Url="ftp://opensource:xxxxxx@buildserver">
+          <File Path="NHunspell-{VERSION}.zip" />
+        </Settings>
+        <Settings Tool="NuGet" Url="http://buildserver:8050//nuget/OpenSource" ApiKey="7b6f71d9-6fad-4d07-9ae9-2c7e25ab6b73">
+          <File Path="NHunspell.{VERSION}.nupkg" />
+        </Settings>
+      </Publish>      
     </Solution>
 
   </Solutions>
