@@ -29,6 +29,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -314,19 +316,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\Hunspell\Bin\x64\Hunspellx64.dll">
+    <Content Include="..\..\HunspellWindows\Bin\x64\Hunspellx64.dll">
       <Link>Hunspellx64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\Hunspell\Bin\x64\Hunspellx64.pdb">
+    <Content Include="..\..\HunspellWindows\Bin\x64\Hunspellx64.pdb">
       <Link>Hunspellx64.pdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\Hunspell\Bin\x86\Hunspellx86.dll">
+    <Content Include="..\..\HunspellWindows\Bin\x86\Hunspellx86.dll">
       <Link>Hunspellx86.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\Hunspell\Bin\x86\Hunspellx86.pdb">
+    <Content Include="..\..\HunspellWindows\Bin\x86\Hunspellx86.pdb">
       <Link>Hunspellx86.pdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -6,7 +6,7 @@ using System.Text;
 
 
 
-[TestFixture]
+[TestFixture(Ignore=true, IgnoreReason = "Interop is platform specific")]
 public class InteropTests
 {
     IntPtr dllHandle = IntPtr.Zero;

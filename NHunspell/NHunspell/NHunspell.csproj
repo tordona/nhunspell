@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\NHunspell.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />

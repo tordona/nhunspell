@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>NHunspell</id>
-    <version>1.2.5323.42972</version>
+    <version>1.2.5357.42186</version>
     <title>
           NHunspell Spell Check, Hyphenation, Thesaurus</title>
     <authors>Thomas Maierhofer</authors>
@@ -18,11 +18,11 @@
         IMPORTANT: Please visit the Project Site to get informations about Installation, Samples and Directories.</description>
     <summary>NHunspell brings the Open Office spell checking, hyphenation and thesaurus libraries to the Microsoft® .NET Framework. IMPORTANT: Please visit the Project Site to get informations about Installation, Samples and Directories.</summary>
     <releaseNotes>
-      Nhunspell is build upon:
-      Hunspell Version: 1.3.2
-      Hyphen Version: 2.8.6
+      NHunspell is build upon:
+      Hunspell Version: 1.3.3
+      Hyphen Version: 2.8.7
       MyThes Version: managed implementation
-      Hunspell / Hyphen Patches up to: 2013-03-14
+      Hunspell / Hyphen Patches up to: 2014-07-30
       
       
       </releaseNotes>

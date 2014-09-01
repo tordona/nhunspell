@@ -1,63 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!-- Build configuration for NHunspell -->
-<BuildConfig
-  xmlns="http://www.crawler-lib.net/buildtools"
+
+<BuildConfig xmlns="http://www.crawler-lib.net/build-tools"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.crawler-lib.net buildconfig.xsd">
+  xsi:schemaLocation="http://www.crawler-lib.net/build-tools http://download.crawler-lib.net/BuildTools/BuildConfig.xsd?action=view">
 
+  <CurrentBuild/>
+  
+  <!-- Defines the build label for a new build -->
+  <Label>
+    <BuildRevisionTimestamp/>
+  </Label>
+  
+  
+  <Credentials>
+    <Plain>
+      NuGetFeed=http://buildserver:8050/nuget/Test
+      NuGetApiKey=b763316f-25c2-4d17-bf0a-1c22e071eb05
+    </Plain>
+  </Credentials>
+  
   <Solutions>
-    <Solution Name ="NHunspell" Version="1.2">
+    <!-- The NHunspell solution to build, not to be confused with a visual studio solution -->
+    <Solution Name="NHunspell">
+      <Version>
+        <AppendLabel>1.2</AppendLabel>
+      </Version>
+      <BuildSequences>
 
-      <Repository Type="HG" Url="http://opensource:xxxxxx@buildserver:8010/scm/hg/General/NHunspell" />
+        <!-- Build Sequence to perform a new build -->
+        <BuildSequence Name="New-Build">
 
-      <Build>
-        <Settings Base ="..\Hunspell" Path="HunspellWindows.sln" VersionTool="Autover" BuildTool="MSBuild" NuGet="true">
-          <Target Configuration="Release" Platform="x86" />
-          <Target Configuration="Release" Platform="x64" />
-        </Settings> 
+          <!-- Patching the version of the projects to the current build version -->
+          <Autover Path="..\HunspellWindows\HunspellWindows.sln"  />
+          <Autover Path="NHunspell.sln"  />
+
+          <!-- Compiling the native hunspell DLLs for Windows -->
+          <MSBuild Path="..\HunspellWindows\HunspellWindows.sln" Configuration="Release" Platform="x86" />
+          <MSBuild Path="..\HunspellWindows\HunspellWindows.sln" Configuration="Release" Platform="x64" />
+         
+          <!-- Compiling NHunspell itself -->
+          <MSBuild Path="NHunspell.sln" Configuration="Release" Platform="Any CPU" />
+  
+          <!-- Test if all files exist, have the correct file and product versions and are newly build --> 
+          <VerifyFile Path="UnitTests\bin\release\Hunspellx86.dll"  FileVersion="true"   ProductVersion="true"   New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\Hunspellx86.pdb"  FileVersion="false"  ProductVersion="false"  New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\Hunspellx64.dll"  FileVersion="true"   ProductVersion="true"   New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\Hunspellx64.pdb"  FileVersion="false"  ProductVersion="false"  New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\NHunspell.dll"    FileVersion="true"   ProductVersion="true"   New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\NHunspell.pdb"    FileVersion="false"  ProductVersion="false"  New="true"/>
+          <VerifyFile Path="UnitTests\bin\release\UnitTests.exe"    FileVersion="true"   ProductVersion="true"   New="true"/>          
+          
+          <!-- Performing several tests with the new files -->
+          <NUnit Path="UnitTests\bin\release\UnitTests.exe" />
+          <FxCop Path="UnitTests\bin\release\NHunspell.dll" />
+            
+          <!-- Make a zipped release package -->
+          <Zip Path="UnitTests\bin\release\Hunspellx86.dll" Target="Hunspellx86.dll" Output="NHunspell.$($context.PackageVersion).zip" />
+          <Zip Path="UnitTests\bin\release\Hunspellx86.pdb" Target="Hunspellx86.pdb" Output="NHunspell.$($context.PackageVersion).zip" />
+          <Zip Path="UnitTests\bin\release\Hunspellx64.dll" Target="Hunspellx64.dll" Output="NHunspell.$($context.PackageVersion).zip" />
+          <Zip Path="UnitTests\bin\release\Hunspellx64.pdb" Target="Hunspellx64.pdb" Output="NHunspell.$($context.PackageVersion).zip" />
+          <Zip Path="UnitTests\bin\release\NHunspell.dll"   Target="NHunspell.dll"   Output="NHunspell.$($context.PackageVersion).zip" />
+          <Zip Path="UnitTests\bin\release\NHunspell.pdb"   Target="NHunspell.pdb"   Output="NHunspell.$($context.PackageVersion).zip" />
+          
+          <!-- Write Release Info file -->            
+          <AppendText Output="NHunspell.$($context.PackageVersion).zip.info.xml">
+<![CDATA[<?xml version=`"1.0`" encoding=`"utf-8`" ?>
+<infos>
+  <summary>NHunspell Release Version $($context.Version) RTM</summary>
+  <description>
+    <a href=`"http://www.crawler-lib.net/nhunspell`">NHunspell</a> Release Version $($context.Version) RTM
+  </description>
+</infos>]]>
+            </AppendText>
+          
+          <!-- Update the version and dependencies versions in the NuSpec file -->
+          <NuSpecUpdate>
+            <NuSpec Path ="NHunspell.nuspec" />
+          </NuSpecUpdate>
+          
+          <!-- Pack the NuGet package -->
+          <NuGetPack Path ="NHunspell.nuspec"/>
         
-        <Settings Base ="" Path="NHunspell.sln" VersionTool="Autover" BuildTool="MSBuild" NuGet="true">
-          <Target Configuration="Release" Platform="Any CPU" />
-          <!--
-          <Target Configuration="Release" Platform="x86" />
-          <Target Configuration="Release" Platform="x64" />
-          -->
-        </Settings> 
-      </Build>
-      
+        </BuildSequence>
 
-      <Test>
-        <Settings Tool="NUnit" Assembly="UnitTests\bin\release\UnitTests.exe" Output="NUnitTestResult.xml"/>
-        <Settings Tool="FxCop" Assembly="UnitTests\bin\release\NHunspell.dll" Output="FxCopTestResult.xml"/>
-      </Test>
-
-      <!-- Generate Packages -->
-      <Package>
-        <Settings Tool="NuGet" Path="NHunspell.nuspec" />
-      </Package>      
-     
-     
-      
-      <Release>
-        <File Path="UnitTests\bin\release\NHunspell.dll" Zipped="NHunspell.dll" Version="true" />
-        <File Path="UnitTests\bin\release\NHunspell.pdb" Zipped="NHunspell.pdb" Version="false" />
-        <File Path="UnitTests\bin\release\Hunspellx64.dll" Zipped="Hunspellx64.dll" Version="true" />
-        <File Path="UnitTests\bin\release\Hunspellx64.pdb" Zipped="Hunspellx64.pdb" Version="false" />
-        <File Path="UnitTests\bin\release\Hunspellx86.dll" Zipped="Hunspellx86.dll" Version="true" />
-        <File Path="UnitTests\bin\release\Hunspellx86.pdb" Zipped="Hunspellx86.pdb" Version="false" />
-      </Release>
-
-      <!-- Publishing Files, {VERSION} in the path will be replaced with the current build version-->
-      <Publish>
-        <Settings Tool="FTP" Url="ftp://opensource:xxxxxx@buildserver">
-          <File Path="NHunspell-{VERSION}.zip" />
-        </Settings>
-        <Settings Tool="NuGet" Url="http://buildserver:8050//nuget/OpenSource" ApiKey="7b6f71d9-6fad-4d07-9ae9-2c7e25ab6b73">
-          <File Path="NHunspell.{VERSION}.nupkg" />
-        </Settings>
-      </Publish>      
+        <!-- Publishes the previously created build -->
+        <BuildSequence Name="Publish-Build" NewBuild="false">
+        
+        </BuildSequence>  
+    
+    </BuildSequences>
     </Solution>
 
   </Solutions>
-</BuildConfig>
+</BuildConfig>  
+  
+  

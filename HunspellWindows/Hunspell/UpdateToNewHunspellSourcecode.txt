@@ -27,9 +27,9 @@ Insert the header include in Hunspell/filemgr.hxx
 Copy the Hyphen Files in the Hyphen folder
 Rename the .c hyphen files in .cpp
 
-Copmpile the Hyphen File and fix the C - CPP errors
-* rename varaibles new to newstr
-* cast void * to char *, HypenTrans *, Hyphen Dict * ... wenn needed
+Compile the Hyphen File and fix the C - CPP errors
+* rename variables new to newstr
+* cast void * to char *, HypenTrans *, Hyphen Dict * ... when needed
 
 Insert the header include in Hyphen/Hyphen.cpp after the standard headers:
 #include "../NHunspellExtensions.h"

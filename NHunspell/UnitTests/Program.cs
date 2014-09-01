@@ -4,10 +4,23 @@ using NHunspell;
 
 namespace UnitTests
 {
+    using NUnit.Framework;
+
     class Program
     {
         static void Main(string[] args)
         {
+
+            using (Hunspell hunspell = new Hunspell("en_us.aff", "en_us.dic"))
+            {
+                var correct = hunspell.Spell("houses");
+                var suggest = hunspell.Suggest("haise");
+                foreach (var x in suggest)
+                {
+                    Console.WriteLine(x);
+                }
+            }
+
 
             /*
              var test = new SpellEngineTests();
@@ -27,7 +40,7 @@ namespace UnitTests
             
             var test = new HunspellTests();
             // test.AllDictionariesTest();
-            // test.SpellComplexWordsTest();
+            test.SpellComplexWordsTest();
             test.AddWordTest();
             // test.GermanUmlautTest();
             // test.UnicodeFilenameTest();

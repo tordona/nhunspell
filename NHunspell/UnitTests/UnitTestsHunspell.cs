@@ -24,6 +24,20 @@ public class HunspellTests
     }
 
     [Test]
+    public void GenerationTest()
+    {
+        using (Hunspell hunspell = new Hunspell("en_us.aff", "en_us.dic"))
+        {
+            var generated = hunspell.Generate("boy", "girls");
+            foreach (var gen in generated)
+            {
+                
+            }
+        }
+    }
+
+
+    [Test]
     public void SpellComplexWordsTest()
     {
         using (Hunspell hunspell = new Hunspell("en_us.aff", "en_us.dic"))
