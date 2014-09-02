@@ -25,7 +25,6 @@ namespace WebSampleApplication
                 enConfig.HunspellDictFile = Path.Combine(dictionaryPath, "en_us.dic");
                 enConfig.HunspellKey = "";
                 enConfig.HyphenDictFile = Path.Combine(dictionaryPath, "hyph_en_us.dic");
-                enConfig.MyThesIdxFile = Path.Combine(dictionaryPath, "th_en_us_new.idx");
                 enConfig.MyThesDatFile = Path.Combine(dictionaryPath, "th_en_us_new.dat");
                 spellEngine.AddLanguage(enConfig);
             }

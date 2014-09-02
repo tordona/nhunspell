@@ -126,7 +126,6 @@ namespace CSharpConsoleSamples
                 enConfig.HunspellDictFile = "en_us.dic";
                 enConfig.HunspellKey = "";
                 enConfig.HyphenDictFile = "hyph_en_us.dic";
-                enConfig.MyThesIdxFile = "th_en_us_new.idx";
                 enConfig.MyThesDatFile = "th_en_us_new.dat";
                 Console.WriteLine("Configuration will use " + engine.Processors.ToString() + " processors to serve concurrent requests");
                 engine.AddLanguage(enConfig);

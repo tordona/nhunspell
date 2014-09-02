@@ -70,7 +70,7 @@ namespace UnitTests
             
             Console.WriteLine("");
             Console.WriteLine("Thesaurus with Thes");
-            MyThes thes = new MyThes("th_en_us_new.idx", "th_en_us_new.dat");
+            MyThes thes = new MyThes("th_en_us_new.dat");
             using (Hunspell hunspell = new Hunspell("en_us.aff", "en_us.dic"))
             {
 

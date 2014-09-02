@@ -87,7 +87,7 @@
 
         <!-- Publishes the previously created build -->
         <BuildSequence Name="Publish-Build" NewBuild="false">
-        
+          <NuGetPush Path ="NHunspell.$($context.PackageVersion).nupkg" ApiKey="$($context.Credentials.NuGetApiKey)" Feed="$($context.Credentials.NuGetFeed)"/>
         </BuildSequence>  
     
     </BuildSequences>

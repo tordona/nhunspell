@@ -98,7 +98,7 @@ Module MainModule
         Console.WriteLine("SpellEngine - Spell Check/Hyphenation/Thesaurus Engine")
         Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯")
         Console.WriteLine("High performance spell checking for servers and web servers")
-        Console.WriteLine("All functions are tread safe. Implementaion uses multi core/multi processor")
+        Console.WriteLine("All functions are tread safe. Implementation uses multi core/multi processor")
         Console.WriteLine("Multiple Languages can be added via AddLanguage()")
         Using engine As New SpellEngine()
 
@@ -112,7 +112,6 @@ Module MainModule
             enConfig.HunspellDictFile = "en_us.dic"
             enConfig.HunspellKey = ""
             enConfig.HyphenDictFile = "hyph_en_us.dic"
-            enConfig.MyThesIdxFile = "th_en_us_new.idx"
             enConfig.MyThesDatFile = "th_en_us_new.dat"
             Console.WriteLine("Configuration will use " & engine.Processors.ToString() & " processors to serve concurrent requests")
             engine.AddLanguage(enConfig)

@@ -35,7 +35,6 @@ public class SpellEngineTests
             enConfig.HunspellDictFile = "en_us.dic";
             enConfig.HunspellKey = "";
             enConfig.HyphenDictFile = "hyph_en_us.dic";
-            enConfig.MyThesIdxFile = "th_en_us_new.idx";
             enConfig.MyThesDatFile = "th_en_us_new.dat";
             engine.AddLanguage(enConfig);
 
