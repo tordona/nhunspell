@@ -15,17 +15,19 @@
 
   <!-- Specify credentials (passwords, keys, URLs, ...) to use in the build steps with $($context.Creadentails.KeyName) -->
   <Credentials>
-    
+    <Powershell>
+      return @{ "PackageZipFile" = $context.SolutionArtifactsLocation + "\NHunspellSamples." + $context.PackageVersion + ".zip" }
+    </Powershell>
   </Credentials>
 
   <Solutions>
-    <!-- Solution to build -->
+    <!-- The NHunspell samples solution to build -->
     <Solution Name="NHunspellSamples">
       
       <!-- Specify the version generation mechanism for new builds -->  
       <Version>
         <!-- AppendLabel appends the build label to create the version. The build label must be in the format Build.Revision -->
-        <AppendLabel>1.0</AppendLabel>
+        <AppendLabel>1.2</AppendLabel>
       </Version>
      
       <!-- Build Sequences are lists of build steps that can be executed. It is a good practice to implement the sequences New-Build, Test-Build and Publish-Build -->
@@ -34,14 +36,23 @@
         <BuildSequence Name="New-Build">
           <MSBuild Path="NHunspellSamples.sln" Configuration="Release" Platform="Any CPU"/>
         </BuildSequence>
-    
-        <!-- Specify the build steps to test the current build -->
-        <BuildSequence Name="Test-Build" NewBuild="false">
-        </BuildSequence>
-      
-        <!-- Specify the build steps to publish the current build -->
-        <BuildSequence Name="Publish-Build" NewBuild="false">
+     
+        <!-- Specify the build steps to complete the current build -->
+        <BuildSequence Name="Complete-Build" NewBuild="false">
+          <DumpContext/>
+          <!-- Due to the fact that packaging this build is very special, we use PowerShell to achieve it. -->
           <Powershell Path="PackBuild.ps1" />
+          
+          <!-- Our download server needs a .info.xml file to display additional informations, so we create one  -->
+          <AppendText Output="$($context.Credentials.PackageZipFile).info.xml">
+<![CDATA[<?xml version=`"1.0`" encoding=`"utf-8`" ?>
+<infos>
+  <summary>NHunspell Samples Release Version $($context.Version)</summary>
+  <description>
+    <a href=`"http://www.crawler-lib.net/nhunspell`">NHunspell Samples</a> Release Version $($context.Version)
+  </description>
+</infos>]]>
+          </AppendText>
         </BuildSequence>      
     
       </BuildSequences>
