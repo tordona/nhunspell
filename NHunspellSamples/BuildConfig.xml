@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Build Configuration for NHunspellSamples -->
+<BuildConfig xmlns="http://www.crawler-lib.net/build-tools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.crawler-lib.net/build-tools http://download.crawler-lib.net/BuildTools/BuildConfig.xsd?action=view">
+
+  <!-- Specify the artifacts and current build XML file location and name-->
+  <CurrentBuild/>
+
+  <!-- Specify the label generation mechanism for new builds -->
+  <Label>
+    <BuildRevisionTimestamp/>
+  </Label>
+
+  <!-- Specify credentials (passwords, keys, URLs, ...) to use in the build steps with $($context.Creadentails.KeyName) -->
+  <Credentials>
+    
+  </Credentials>
+
+  <Solutions>
+    <!-- Solution to build -->
+    <Solution Name="NHunspellSamples">
+      
+      <!-- Specify the version generation mechanism for new builds -->  
+      <Version>
+        <!-- AppendLabel appends the build label to create the version. The build label must be in the format Build.Revision -->
+        <AppendLabel>1.0</AppendLabel>
+      </Version>
+     
+      <!-- Build Sequences are lists of build steps that can be executed. It is a good practice to implement the sequences New-Build, Test-Build and Publish-Build -->
+      <BuildSequences>
+        <!-- Specify the build steps to perform a new build -->
+        <BuildSequence Name="New-Build">
+          <MSBuild Path="NHunspellSamples.sln" Configuration="Release" Platform="Any CPU"/>
+        </BuildSequence>
+    
+        <!-- Specify the build steps to test the current build -->
+        <BuildSequence Name="Test-Build" NewBuild="false">
+        </BuildSequence>
+      
+        <!-- Specify the build steps to publish the current build -->
+        <BuildSequence Name="Publish-Build" NewBuild="false">
+          <Powershell Path="PackBuild.ps1" />
+        </BuildSequence>      
+    
+      </BuildSequences>
+    </Solution>  
+  </Solutions>
+
+</BuildConfig>
