@@ -63,6 +63,30 @@ namespace CSharpConsoleSamples
 
             }
 
+            Console.WriteLine("");
+            Console.WriteLine("Loading and adding a file with custom words into hunspell");
+            using (var hunspell = new Hunspell("en_us.aff", "en_us.dic"))
+            {
+
+                string[] lines = System.IO.File.ReadAllLines("CustomWords-en_US.txt");
+                foreach (var line in lines)
+                {
+                    hunspell.Add(line);
+                }
+
+                Console.WriteLine("Check if the added word 'MyTag' is spelled correct"); 
+                bool correct = hunspell.Spell("MyTag");
+                Console.WriteLine("'MyTag' is spelled " + (correct ? "correct" : "not correct"));
+                Console.WriteLine("Make suggestions for the misspelled word 'MyTog'");
+                List<string> suggestions = hunspell.Suggest("MyTog");
+                Console.WriteLine("There are " + suggestions.Count + " suggestions");
+                foreach (string suggestion in suggestions)
+                {
+                    Console.WriteLine("Suggestion is: " + suggestion);
+                }
+            }
+
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Hyph - Hyphenation Functions");
