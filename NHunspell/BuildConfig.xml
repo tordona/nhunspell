@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!-- Build configuration for NHunspell -->
-
 <BuildConfig xmlns="http://www.crawler-lib.net/build-tools"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.crawler-lib.net/build-tools http://download.crawler-lib.net/BuildTools/BuildConfig.xsd?action=view">
@@ -51,11 +50,18 @@
           <VerifyFile Path="UnitTests\bin\release\NHunspell.dll"    FileVersion="true"   ProductVersion="true"   New="true"/>
           <VerifyFile Path="UnitTests\bin\release\NHunspell.pdb"    FileVersion="false"  ProductVersion="false"  New="true"/>
           <VerifyFile Path="UnitTests\bin\release\UnitTests.exe"    FileVersion="true"   ProductVersion="true"   New="true"/>          
-          
+
+        </BuildSequence>
+
+        <!-- Build Sequence to test the current build -->        
+        <BuildSequence Name="Test-Build" Depends="New-Build" NewBuild="false">
           <!-- Performing several tests with the new files -->
           <NUnit Path="UnitTests\bin\release\UnitTests.exe" />
-          <FxCop Path="UnitTests\bin\release\NHunspell.dll" />
-            
+          <FxCop Path="UnitTests\bin\release\NHunspell.dll" />          
+        </BuildSequence>  
+
+        <!-- Build Sequence to complete (pack) the current build -->        
+        <BuildSequence Name="Complete-Build" Depends="Test-Build" NewBuild="false">
           <!-- Make a zipped release package -->
           <Zip Path="UnitTests\bin\release\Hunspellx86.dll" Target="Hunspellx86.dll" Output="NHunspell.$($context.PackageVersion).zip" />
           <Zip Path="UnitTests\bin\release\Hunspellx86.pdb" Target="Hunspellx86.pdb" Output="NHunspell.$($context.PackageVersion).zip" />
@@ -68,9 +74,9 @@
           <AppendText Output="NHunspell.$($context.PackageVersion).zip.info.xml">
 <![CDATA[<?xml version=`"1.0`" encoding=`"utf-8`" ?>
 <infos>
-  <summary>NHunspell Release Version $($context.Version) RTM</summary>
+  <summary>NHunspell Release Version $($context.Version)</summary>
   <description>
-    <a href=`"http://www.crawler-lib.net/nhunspell`">NHunspell</a> Release Version $($context.Version) RTM
+    <a href=`"http://www.crawler-lib.net/nhunspell`">NHunspell</a> Release Version $($context.Version)
   </description>
 </infos>]]>
             </AppendText>
@@ -81,10 +87,9 @@
           </NuSpecUpdate>
           
           <!-- Pack the NuGet package -->
-          <NuGetPack Path ="NHunspell.nuspec"/>
+          <NuGetPack Path ="NHunspell.nuspec"/>          
+        </BuildSequence>  
         
-        </BuildSequence>
-
         <!-- Publishes the previously created build -->
         <BuildSequence Name="Publish-Build" NewBuild="false">
           <NuGetPush Path ="NHunspell.$($context.PackageVersion).nupkg" ApiKey="$($context.Credentials.NuGetApiKey)" Feed="$($context.Credentials.NuGetFeed)"/>
@@ -92,7 +97,6 @@
     
     </BuildSequences>
     </Solution>
-
   </Solutions>
 </BuildConfig>  
   

@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,5359,26126
- PRODUCTVERSION 1,2,5359,26126
+ FILEVERSION 1,2,5372,690
+ PRODUCTVERSION 1,2,5372,690
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,11 +69,11 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Thomas Maierhofer"
             VALUE "FileDescription", "Hunspell Native Code DLL"
-            VALUE "FileVersion", "1,2,5359,26126"
+            VALUE "FileVersion", "1,2,5372,690"
             VALUE "InternalName", "Hunspell"
             VALUE "LegalCopyright", "Copyright (C) Thomas Maierhofer, Lazlo Nemeth and all contributing authors."
             VALUE "ProductName", "NHunspell Spell Checker"
-            VALUE "ProductVersion", "1.2.5359.26126"
+            VALUE "ProductVersion", "1.2.5372.690"
         END
     END
     BLOCK "VarFileInfo"
